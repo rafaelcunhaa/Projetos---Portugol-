@@ -1,0 +1,179 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro opcao1
+		inteiro S0
+		inteiro V0
+		inteiro aa
+		inteiro t
+		inteiro S
+		 inteiro nn
+          inteiro num_triangulos
+          real peso1
+   real peso2
+   real comprimento1
+   real comprimento2	
+   real lado1
+   real lado2
+   real lado3
+   inteiro lado11
+   inteiro lado22
+   inteiro lado33
+   real n1 
+ real n2
+ real total
+ inteiro x
+		inteiro y
+		inteiro impares=0
+		inteiro par=0
+		inteiro a
+		inteiro r
+		inteiro n
+		inteiro soma=0
+		inteiro i=1
+escreva("Escolha uma opção:\n")
+        escreva("1 - Cálculo da posição usando a fórmula do Sorvetão\n")
+        escreva("2 - Divisão de um polígono em triângulos\n")
+        escreva("3 - Equilíbrio da gangorra\n")
+        escreva("4 - Identificação do tipo de triângulo (equilátero, isósceles ou escaleno)\n")
+        escreva("5 - Validação de formação de triângulo e tipo\n")
+        escreva("6 - Soma de dois números\n")
+        escreva("7 - Contagem de números pares e ímpares em um intervalo\n")
+        escreva("8 - Cálculo de soma de uma progressão geométrica\n")
+        leia(opcao1)
+
+      se(opcao1 == 1) {
+        escreva("Digite a posição inicial do objeto: ")
+leia(S0)
+
+escreva("Digite a velocidade inicial do objeto: ")
+leia(V0)
+
+escreva("Digite a aceleração do objeto: ")
+leia(aa)
+
+escreva("Digite o tempo: ")
+leia(t)
+
+ escreva(S0 + V0 * t + aa * t * t / 2)
+ leia(S)
+
+escreva("A posição do objeto no tempo ", t, " é ", S)}
+      senao se(opcao1 == 2) {
+          escreva("Digite o número de lados do polígono: ")
+   leia(nn)
+   
+   se (nn < 3){
+      escreva("O número de lados deve ser maior ou igual a 3.")
+   }
+   senao se (nn == 3){
+      escreva("O polígono é um triângulo.")}
+   senao
+      escreva(nn/3)
+      leia(num_triangulos)
+      escreva("O número mínimo de triângulos necessário é ", num_triangulos)}
+      senao se(opcao1 == 3) {
+          escreva("Digite o peso da criança no lado esquerdo: ")
+   leia(peso1)
+   escreva("Digite o comprimento do lado esquerdo da gangorra: ")
+   leia(comprimento1)
+   escreva("Digite o peso da criança no lado direito: ")
+   leia(peso2)
+   escreva("Digite o comprimento do lado direito da gangorra: ")
+   leia(comprimento2)
+
+   se (peso1 * comprimento1 == peso2 * comprimento2){
+      escreva("A gangorra está equilibrada!")
+   }
+   senao se (peso1 * comprimento1 > peso2 * comprimento2){
+      escreva("A gangorra está pendendo para a esquerda.")
+   }
+   senao
+      escreva("A gangorra está pendendo para a direita.")}
+      senao se(opcao1 == 4) {
+            escreva("Digite o comprimento do primeiro lado: ")
+   leia(lado1)
+   escreva("Digite o comprimento do segundo lado: ")
+   leia(lado2)
+   escreva("Digite o comprimento do terceiro lado: ")
+   leia(lado3)
+
+   se (lado1 == lado2 e lado2 == lado3) {
+      escreva("O triângulo é equilátero.")
+      }
+   senao se (lado1 == lado2 ou lado1 == lado3 ou lado2 == lado3) {
+      escreva("O triângulo é isósceles.")
+   }
+   senao{
+      escreva("O triângulo é escaleno.")
+   }}
+      senao se(opcao1 == 5){
+         escreva("Digite os numeros: ")
+    leia(lado11, lado22, lado33)
+
+    se(lado11 + lado22 > lado33 e lado11 + lado33 > lado22 e lado22 + lado33 > lado11){
+      escreva("Formam um triângulo ")
+      se(lado11 == lado22 e lado11 == lado33)
+        escreva("equilátero.\n")
+      senao{
+        se(lado11 == lado22 ou lado11 == lado33 ou lado22 == lado33)
+          escreva("isósceles.\n")
+        senao
+          escreva("escaleno.\n")
+      }
+    }
+    senao
+      escreva("Não formam um triângulo!\n")}
+      senao se(opcao1 == 6){
+         escreva("Escreva tres numero:")
+ leia(n1)
+ limpa()
+ escreva("escreva outo numero")
+ leia(n2)
+escreva(n1+n2)
+leia(total)
+escreva("o total é" , total) }
+      senao se(opcao1 == 7) {
+                escreva("escreva um numero:")
+       leia(x)
+       escreva("escreva outro numero:")
+       leia(y)
+  enquanto(x<y){
+  	se (x%2==1){
+  	escreva("\n",x)
+  	impares++
+  	}
+  	senao{
+  		par++
+  	}
+  	x++
+  }
+  escreva("\nquantidade de impares é ", impares )
+  escreva("\nquantidade de pares é ", par )}
+      senao se(opcao1 == 8){
+            escreva("Digite o valor de a: ")
+   leia(a)
+   escreva("Digite o valor de r: ")
+   leia(r)
+   escreva("Digite o valor de n: ")
+   leia(n)
+   enquanto(soma <- 0 e i!=n){
+      escreva(soma <- soma + a * r * (i - 1))
+   }
+   escreva("O valor da soma é: ", soma)}
+
+	}}
+/* $$$ Portugol Studio $$$ 
+ * 
+ * Esta seção do arquivo guarda informações do Portugol Studio.
+ * Você pode apagá-la se estiver utilizando outro editor.
+ * 
+ * @POSICAO-CURSOR = 4008; 
+ * @DOBRAMENTO-CODIGO = [46, 63, 76, 94, 111, 128, 137, 154];
+ * @PONTOS-DE-PARADA = ;
+ * @SIMBOLOS-INSPECIONADOS = ;
+ * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
+ * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
+ */
